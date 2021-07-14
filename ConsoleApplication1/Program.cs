@@ -17,7 +17,7 @@ namespace ConsoleApplication1
             var request = (HttpWebRequest)WebRequest.Create(strSiteUrl);
             var response = (HttpWebResponse)request.GetResponse();
             var stream = response.GetResponseStream();
-            var streamReader = new StreamReader(stream);
+            var streamReader = new StreamReader(stream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
             //Console.WriteLine(streamReader.ReadToEnd());
 
             string[] lines = { streamReader.ReadToEnd() };
